@@ -5,6 +5,7 @@ rvm:
 
 before_install:
   - gem install bundler -v '2.1.1'
+  - bundle update
 
 dist: trusty
 
