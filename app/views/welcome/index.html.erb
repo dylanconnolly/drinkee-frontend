@@ -7,6 +7,11 @@
           <a class="nav-link active" href="#">Home</a>
           <a class="nav-link" href="#">Features</a>
           <a class="nav-link" href="#">Contact</a>
+          <% if current_user %>
+            <h3>Logged in as <%= current_user.email %></h3>
+          <% else %>
+            <a class="nav-link" href="#"><%= link_to 'Log in with Google', user_login_path %></a>
+          <% end %>
         </nav>
       </div>
     </header>
