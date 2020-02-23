@@ -6,8 +6,12 @@ RSpec.feature "user logs in" do
     visit '/'
     expect(page).to have_link("Log in with Google")
     click_link "Log in with Google"
-    expect(page).to have_content("Logged in as rlew07@gmail.com")
+    expect(page).to have_content("Logged in as Rachel Lew")
     expect(page).to have_link("Log out")
+    click_link "Log out"
+    expect(page).to_not have_content("Log out")
+    expect(page).to_not have_content("Logged in as Rachel Lew")
+    expect(page).to have_content("Log in with Google")
   end
 
   def stub_omniauth
@@ -28,29 +32,3 @@ RSpec.feature "user logs in" do
     })
   end
 end
-
-# describe "user can login with their gmail" do
-#   it "by clicking a button that connects to Google" do
-#     OmniAuth.config.test_mode = true
-#
-#     user = create(:user)
-#
-#     OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
-#       :provider => 'google_oauth2',
-#       :credentials => {:token => ENV['GITHUB_TOKEN']}
-#       })
-#
-#     visit '/'
-#     expect(page).to have_link("Log In")
-#
-#     expect(page).to_not have_link("Dashboard")
-#     expect(page).to_not have_link("Cabinet")
-#     expect(page).to_not have_link("Ingredients")
-#     expect(page).to_not have_link("Find Recipes")
-#
-#     click_link "Log In"
-#
-#     expect(current_path).to eq('/dashboard')
-#     OmniAuth.config.mock_auth[:google_oauth2] = nil
-#   end
-# end
