@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   get '/auth/failure', to: redirect('/')
   get '/dashboard', to: 'users#show'
   get 'logout', to: 'sessions#destroy'
+
+
+
+  get '/ingredients', to: 'ingredients#index'
 end
