@@ -40,7 +40,8 @@ gem 'faraday'
 gem 'figaro'
 gem 'bootstrap'
 gem 'jquery-rails'
-# gem 'webpacker'
+gem 'fast_jsonapi'
+gem 'faker'
 gem 'omniauth-google-oauth2'
 
 group :development, :test do
