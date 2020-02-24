@@ -9,3 +9,6 @@ before_install:
 dist: trusty
 
 os: osx
+
+services:
+  - postgresql
