@@ -10,4 +10,6 @@ Rails.application.routes.draw do
 
 
   get '/ingredients', to: 'ingredients#index'
+  get '/cabinet', to: 'cabinets#show'
+  get '/results', to: 'results#index'
 end
