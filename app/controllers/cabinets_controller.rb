@@ -1,6 +1,6 @@
 class CabinetsController < ApplicationController
   def show
-
+    @cabinet = BackEndApi.new.get_cabinet(current_user.id)
   end
 
   def update
