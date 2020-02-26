@@ -18,7 +18,7 @@ describe 'user can view their cabinet' do
 
     click_on "Update Ingredients"
 
-    expect(current_page).to have_content("Vodka")
-    expect(current_page).to have_content("Gin")
+    expect(page).to have_content("Vodka")
+    expect(page).to have_content("Gin")
   end
 end

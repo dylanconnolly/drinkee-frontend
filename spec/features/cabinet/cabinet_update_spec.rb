@@ -7,6 +7,8 @@ describe 'when a user has selected some ingredients' do
 
     keep_user_logged_in(user)
 
+    Faraday.new.post("#{ENV['BACKEND_URL']}api/v1/#{user.id}/cabinet")
+
     visit '/ingredients'
 
     within '#ingredient-1' do
@@ -19,7 +21,7 @@ describe 'when a user has selected some ingredients' do
 
     click_on "Update Ingredients"
 
-    expect(current_page).to have_content("Vodka")
-    expect(current_page).to have_content("Gin")
+    expect(page).to have_content("Vodka")
+    expect(page).to have_content("Gin")
   end
 end
