@@ -12,11 +12,10 @@ class BackEndApi
 
   def get_ingredients
     ingredient_info = get_json('api/v1/ingredients')
-    ingredients  = []
+
+    ingredients = []
     ingredient_info[:data].each do |ingredient_data|
-
       ingredients.push Ingredient.new(ingredient_data)
-
     end
     ingredients
   end
@@ -25,9 +24,7 @@ class BackEndApi
     cabinet_ingredients_info = get_json("api/v1/#{user_id}/cabinet")
     ingredients = []
     cabinet_ingredients_info[:data].each do |ingredient_data|
-
       ingredients.push Ingredient.new(ingredient_data)
-
     end
     ingredients
   end

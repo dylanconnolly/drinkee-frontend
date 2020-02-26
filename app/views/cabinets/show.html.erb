@@ -1,6 +1,6 @@
 <h1>My Cabinet</h1>
 
-<%= button_to "Add or Remove Ingredients", '/ingredients' %>
+<%= link_to "Add or Remove Ingredients", '/ingredients' %>
 
 <% @cabinet.each do |ingredient| %>
   <%= ingredient.name %>
