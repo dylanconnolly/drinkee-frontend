@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def show
-    @user = User.where(id: current_user.id).first
+    @user = current_user
+    render file: '/public/404' unless current_user
   end
 end
