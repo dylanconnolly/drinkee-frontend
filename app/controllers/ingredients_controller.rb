@@ -1,6 +1,8 @@
 class IngredientsController < ApplicationController
 
   def index
-    @ingredients = BackEndApi.new.connection
+    conn = BackEndApi.new
+
+    @ingredients = conn.get_ingredients
   end
 end
