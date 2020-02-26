@@ -1,5 +1,9 @@
 <h1>All ingredients</h1>
-
-<% @ingredients.each do |ingredient| %>
-  <p><%= ingredient.name %></p>
+<%= form_tag '/cabinet/update', method: :patch do %>
+<%= submit_tag 'Update Ingredients' %>
+  <% @ingredients.each do |ingredient| %>
+    <section id='ingredient-<%= ingredient.id %>'>
+      <p><%= ingredient.name %> <%= check_box_tag 'ingredients[]', ingredient.id, current_ingredients_id.include?(ingredient.id.to_s) %></p>
+    </section>
+  <% end %>
 <% end %>
