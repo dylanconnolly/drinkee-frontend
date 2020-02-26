@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-describe 'when a user has selected some ingredients' do
-  it 'and they click update ingredients, a patch request is sent to the backend' do
-
+describe 'user can view their cabinet' do
+  it 'and it lists all ingredients they have added' do
     user = create(:user)
 
     keep_user_logged_in(user)
