@@ -24,7 +24,10 @@ describe "when a user clicks on a drink from the results page" do
 
     click_on "Drinks I Can Make"
     expect(current_path).to eq('/results')
-    expect(page).to have_link "French Connection"
+
+    within "#French-Connection" do
+      expect(page).to have_link "View"
+    end
   end
 
   def stub_omniauth
