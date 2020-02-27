@@ -43,3 +43,21 @@ input[type='checkbox'] {
   align-items: center;
   justify-content: center;
 }
+
+.image-container {
+  position: relative;
+  text-align: center;
+  background: -webkit-linear-gradient(top, rgba(0,0,0,5) 0%,rgba(0,0,0,5) 100%);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.card-image {
+  opacity: 0.7;
+}
