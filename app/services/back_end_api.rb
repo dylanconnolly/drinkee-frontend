@@ -39,4 +39,18 @@ class BackEndApi
   def create_cabinet(user_id)
     connection.post("/api/v1/#{user_id}/cabinet")
   end
+
+  def get_results(user_id)
+    results = get_json("/api/v1/#{user_id}/results")
+
+    results[:data].map do |drink_data|
+      Drink.new(drink_data)
+    end
+  end
+
+  def get_drink(name)
+    results = get_json("/api/v1/drinks?name=#{name}")
+    
+    Drink.new(results[:data])
+  end
 end
