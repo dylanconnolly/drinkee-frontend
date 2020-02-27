@@ -14,7 +14,7 @@ RSpec.describe "user has a navbar" do
     click_link "Log in with Google"
     expect(current_path).to eq('/dashboard')
 
-    within '.navbar' do
+    within '#navbar' do
       expect(page).to have_link("Dashboard")
       expect(page).to have_link("Cabinet")
       expect(page).to have_link("Ingredients")
@@ -22,27 +22,27 @@ RSpec.describe "user has a navbar" do
       expect(page).to have_link("Log out")
     end
 
-    within '.navbar' do
+    within '#navbar' do
       click_link "Dashboard"
     end
     expect(current_path).to eq('/dashboard')
 
-    within '.navbar' do
+    within '#navbar' do
       click_link "Cabinet"
     end
     expect(current_path).to eq('/cabinet')
 
-    within '.navbar' do
+    within '#navbar' do
       click_link "Ingredients"
     end
     expect(current_path).to eq('/ingredients')
 
-    within '.navbar' do
+    within '#navbar' do
       click_link "Find Recipes"
     end
     expect(current_path).to eq('/results')
 
-    within '.navbar' do
+    within '#navbar' do
       click_link "Log out"
     end
     expect(current_path).to eq('/')

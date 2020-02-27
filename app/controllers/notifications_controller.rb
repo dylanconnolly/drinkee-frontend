@@ -1,12 +1,13 @@
 class NotificationsController < ApplicationController
   def new
-
+    @drink_name = params[:drink_name]
   end
-  
+
   def create
-    FriendNotifierMailer.inform(current_user, params[:email]).deliver_now
-    flash[:notice] = "Successfully emailed this recipe!"
-    redirect_to '/dashboard'
-    # change this redirect back to the drink show page
+    drink_name = params[:drink_name]
+    drink = BackEndApi.new.get_drink(drink_name)
+
+    FriendNotifierMailer.inform(current_user, drink, params[:email]).deliver_now
+    redirect_to results_url
   end
 end

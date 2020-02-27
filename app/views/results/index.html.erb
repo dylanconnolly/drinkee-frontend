@@ -1,5 +1,7 @@
-<h1>Drinks you can make</h1>
+<center>
+  <h1>Drinks you can make</h1>
 
-<% @results.each do |result| %>
-  <p><%= link_to "#{result.name}", "/drinks?name=#{result.name}" %></p>
-<% end %>
+  <% @results.each do |result| %>
+    <p><%= link_to "#{result.name}", "/drinks?name=#{result.name}" %></p>
+  <% end %>
+</center>
