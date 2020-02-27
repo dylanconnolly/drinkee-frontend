@@ -1,6 +1,10 @@
-<h1>Email a drink to a friend!</h1>
+<center>
+  <h1>Email a drink to a friend!</h1>
 
-<%= form_tag '/notifications' do %>
-  Your Friend's Email: <%= text_field_tag :email %>
-  <%= submit_tag "Send Recipe" %>
-<% end %>
+  <%= form_tag '/notifications' do %>
+    <%= label_tag :drink_name %>
+    <%= text_field_tag :drink_name, @drink_name %>
+    Your Friend's Email: <%= text_field_tag :email %>
+    <%= submit_tag "Send Recipe" %>
+  <% end %>
+</center>

@@ -2,11 +2,9 @@ require 'rails_helper'
 
 describe "when a user clicks on a drink from the results page" do
   it "they are taken to that drinks show page" do
-    user = create(:user)
-
-    keep_user_logged_in(user)
-
-    visit '/cabinet'
+    stub_omniauth
+    visit '/'
+    click_link "Log in with Google"
 
     visit '/ingredients'
 
@@ -25,11 +23,25 @@ describe "when a user clicks on a drink from the results page" do
     click_on "Update Ingredients"
 
     click_on "Drinks I Can Make"
+    expect(current_path).to eq('/results')
+    expect(page).to have_link "French Connection"
+  end
 
-    click_on "ABC"
-
-    expect(current_path).to eq('/drinks?name=ABC')
-    expect(page).to have_content("ABC")
-    # expect(page).to have_content("ABC")
+  def stub_omniauth
+    OmniAuth.config.test_mode = true
+    OmniAuth.config.mock_auth[:google_oauth2] = OmniAuth::AuthHash.new({
+      provider: "google",
+      uid: "12345678910",
+      info: {
+        email: "rlew07@gmail.com",
+        first_name: "Rachel",
+        last_name: "Lew"
+      },
+      credentials: {
+        token: "abcdefg12345",
+        refresh_token: "12345abcdefg",
+        expires_at: DateTime.now
+      }
+    })
   end
 end

@@ -1,25 +1,20 @@
 require 'rails_helper'
 
-describe 'user can view their cabinet' do
-  it 'and it lists all ingredients they have added' do
+RSpec.describe "from a drink show page" do
+  it "a user can email a drink recipe" do
     stub_omniauth
     visit '/'
-    expect(page).to have_link("Log in with Google")
     click_link "Log in with Google"
 
-    visit '/ingredients'
-    within '#ingredient-1' do
-      check('ingredients[]')
-    end
+    visit '/drinks?name=Victor'
 
-    within '#ingredient-2' do
-      check('ingredients[]')
-    end
+    click_link "Email this recipe"
+    expect(current_path).to eq('/notifications/Victor/new')
 
-    click_on "Update Ingredients"
+    fill_in :email, with: "bob@gmail.com"
+    click_on "Send Recipe"
 
-    expect(page).to have_content("Vodka")
-    expect(page).to have_content("Gin")
+    expect(current_path).to eq('/results')
   end
 
   def stub_omniauth
