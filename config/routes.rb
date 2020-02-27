@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   get '/drinks', to: 'drinks#show'
 
   patch '/cabinet/update', to: 'cabinets#update'
+  get '/notifications/new', to: 'notifications#new'
+  post '/notifications', to: 'notifications#create'
 end
