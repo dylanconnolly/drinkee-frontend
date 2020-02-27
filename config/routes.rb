@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   get '/results', to: 'results#index'
 
   patch '/cabinet/update', to: 'cabinets#update'
+  get '/notifications/new', to: 'notifications#new'
+  post '/notifications', to: 'notifications#create'
 end
