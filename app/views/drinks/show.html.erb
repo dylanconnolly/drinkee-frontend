@@ -1,0 +1,21 @@
+<h1><%= @drink.name  %></h1>
+
+<%= image_tag("#{@drink.image}") %>
+
+<h3>Ingredients: </h3>
+<ul>
+  <li><%= @drink.ingredient_1 %> - <%= @drink.measurement_1 %></li>
+  <li><%= @drink.ingredient_2 %> - <%= @drink.measurement_2 %></li>
+  <li><%= @drink.ingredient_3 %> - <%= @drink.measurement_3 %></li>
+  <li><%= @drink.ingredient_4 %> - <%= @drink.measurement_4 %></li>
+  <li><%= @drink.ingredient_5 %> - <%= @drink.measurement_5 %></li>
+  <li><%= @drink.ingredient_6 %> - <%= @drink.measurement_6 %></li>
+  <li><%= @drink.ingredient_7 %> - <%= @drink.measurement_7 %></li>
+  <li><%= @drink.ingredient_8 %> - <%= @drink.measurement_8 %></li>
+  <li><%= @drink.ingredient_9 %> - <%= @drink.measurement_9 %></li>
+  <li><%= @drink.ingredient_10 %> - <%= @drink.measurement_10 %></li>
+  <li><%= @drink.ingredient_11 %> - <%= @drink.measurement_11%></li>
+</ul>
+
+<h3>Instructions:</h3>
+<p><%= @drink.instructions %></p>
