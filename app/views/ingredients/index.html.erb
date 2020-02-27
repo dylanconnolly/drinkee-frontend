@@ -1,9 +1,24 @@
 <h1>All ingredients</h1>
+
 <%= form_tag '/cabinet/update', method: :patch do %>
-<%= submit_tag 'Update Ingredients' %>
-  <% @ingredients.each do |ingredient| %>
-    <section id='ingredient-<%= ingredient.id %>'>
-      <p><%= ingredient.name %> <%= check_box_tag 'ingredients[]', ingredient.id, current_ingredients_id.include?(ingredient.id.to_s) %></p>
-    </section>
+<div class="container">
+  <div class="row" id="submit-button-top">
+    <%= submit_tag 'Update Ingredients', :class => "btn btn-primary btn-lg" %>
+  </div>
+
+  <% @ingredients.each_slice(3).to_a.each do |three_ingredients| %>
+    <div class="row">
+      <% three_ingredients.each do |ingredient| %>
+      <div class="col-sm">
+        <label id= "ingredient-<%= ingredient.id %>"class="btn btn-secondary toggle">
+          <div id="button-text">
+          <%= ingredient.name %>
+          </div>
+          <%= check_box_tag 'ingredients[]', ingredient.id, current_ingredients_id.include?(ingredient.id.to_s), :class => 'btn btn-secondary toggle' %>
+        </label>
+      </div>
+      <% end %>
+    </div>
   <% end %>
+</div>
 <% end %>
