@@ -7,7 +7,7 @@ describe 'user can view their cabinet' do
     keep_user_logged_in(user)
 
     visit '/ingredients'
-
+    save_and_open_page
     within '#ingredient-1' do
       check('ingredients[]')
     end
