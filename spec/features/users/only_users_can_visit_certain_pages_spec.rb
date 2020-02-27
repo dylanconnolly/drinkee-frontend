@@ -16,8 +16,6 @@ RSpec.describe 'only users are authorized to visit certain pages' do
     visit '/results'
     expect(page).to have_content("The page you were looking for doesn't exist (404)")
 
-    within '.navbar' do
-      expect(page).to_not have_link("Log out")
-    end
+    expect(page).to_not have_link("Log out")
   end
 end
