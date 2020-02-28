@@ -1,9 +1,9 @@
-<h1>My Cabinet</h1>
-
-<%= link_to "Add or Remove Ingredients", '/ingredients' %>
-
-<%= link_to "Drinks I Can Make", '/results' %>
-
-<% @cabinet.each do |ingredient| %>
-  <%= ingredient.name %>
-<% end %>
+<div class="container">
+  <h1>My Cabinet</h1>
+  <%= link_to "Add or Remove Ingredients", '/ingredients', :class => "btn btn-primary btn-lg", id: "add-or-remove-ingredients"%>
+  <ul class="list-group">
+    <% @cabinet.each do |ingredient| %>
+    <li class="list-group-item"><%= ingredient.name %></li>
+    <% end %>
+  </ul>
+</div>
