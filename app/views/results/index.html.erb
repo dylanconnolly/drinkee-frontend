@@ -17,7 +17,7 @@
             <div class="d-flex justify-content-between align-items-center">
               <div class="btn-group">
                 <%= link_to "View", "/drinks?name=#{result.name}", :class => "btn btn-sm btn-outline-secondary" %>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                <%= link_to "Email Recipe", "/notifications/#{result.name}/new", :class => "btn btn-sm btn-outline-secondary" %>
               </div>
               <small class="text-muted">9 mins</small>
             </div>
