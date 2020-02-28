@@ -58,8 +58,20 @@ The Ingredients, Drinks, DrinkIngredients, Cabinet, and CabinetIngredients table
 
 ### Built With
 
-* [Sinatra](http://sinatrarb.com/intro.html)
+* Rails 
+* Ruby 
+* HTML
+* CSS
 
+### Tested With
+* Launchy
+* Capybara
+* Webmock
+
+### Notable Gems 
+* Faker
+* Figaro
+* Factory bot
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -70,7 +82,7 @@ To get a local copy up and running follow these simple steps.
  
 1. Clone the repo
 ```sh
-git clone git@github.com:dylanconnolly/drinkee-backend.git
+git clone git@github.com:dylanconnolly/drinkee-frontend.git
 ```
 
 2. Install gems
@@ -81,13 +93,6 @@ bundle install
 3. Create and migrate database
 ```sh
 rake db:{create,migrate}
-```
-
-4. Import data
-```sh
-rake import:ingredients
-rake import:drinks
-rake import:drink_ingredients
 ```
 
 <!-- USAGE EXAMPLES -->
