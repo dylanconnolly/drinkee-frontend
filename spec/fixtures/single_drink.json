@@ -1,0 +1,62 @@
+{
+    "data": {
+        "id": "2",
+        "type": "drink",
+        "attributes": {
+            "name": "ABC",
+            "category": "Shot",
+            "alcoholic": "Alcoholic",
+            "glass": "Shot glass",
+            "instructions": "Layered in a shot glass.",
+            "image": "https://www.thecocktaildb.com/images/media/drink/tqpvqp1472668328.jpg",
+            "ingredient_1": "Amaretto",
+            "ingredient_2": "Baileys irish cream",
+            "ingredient_3": "Cognac",
+            "ingredient_4": null,
+            "ingredient_5": null,
+            "ingredient_6": null,
+            "ingredient_7": null,
+            "ingredient_8": null,
+            "ingredient_9": null,
+            "ingredient_10": null,
+            "ingredient_11": null,
+            "ingredient_12": null,
+            "ingredient_13": null,
+            "ingredient_14": null,
+            "ingredient_15": null,
+            "measurement_1": "1/3 ",
+            "measurement_2": "1/3 ",
+            "measurement_3": "1/3 ",
+            "measurement_4": null,
+            "measurement_5": null,
+            "measurement_6": null,
+            "measurement_7": null,
+            "measurement_8": null,
+            "measurement_9": null,
+            "measurement_10": null,
+            "measurement_11": null,
+            "measurement_12": null,
+            "measurement_13": null,
+            "measurement_14": null,
+            "measurement_15": null
+        },
+        "relationships": {
+            "ingredients": {
+                "data": [
+                    {
+                        "id": "118",
+                        "type": "ingredient"
+                    },
+                    {
+                        "id": "40",
+                        "type": "ingredient"
+                    },
+                    {
+                        "id": "18",
+                        "type": "ingredient"
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.feature "user logs in" do
-  scenario "using google oauth 2" do
+  xscenario "using google oauth 2" do
     stub_omniauth
     visit '/'
     expect(page).to have_link("Log in with Google")

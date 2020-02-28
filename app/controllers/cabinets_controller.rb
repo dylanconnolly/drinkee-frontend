@@ -1,7 +1,7 @@
 class CabinetsController < ApplicationController
   def show
     render file: '/public/404' unless current_user
-    
+
     @cabinet = BackEndApi.new.get_cabinet(current_user.id)
   end
 

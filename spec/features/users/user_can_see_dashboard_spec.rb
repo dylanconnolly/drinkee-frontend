@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "user can see dashboard when logged in" do
-  it "and see the following:
+  xit "and see the following:
   - Google name (first and last name)
   - Email
   - link to my cabinet" do
