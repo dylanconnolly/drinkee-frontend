@@ -1,9 +1,11 @@
 <nav class="mt-5" style="background-color: #e3f2fd;">
   <nav class="navbar fixed-top navbar-light ml-auto" style="background-color: #e3f2fd;">
+    <% if current_user %>
+      Logged in as <%= current_user.first_name%> <%= current_user.last_name %>
+    <% end %>
     <section id="navbar">
         <ul class="nav nav-pills nav-fill">
           <% if current_user %>
-          Logged in as <%= current_user.first_name%> <%= current_user.last_name %>
           <li class="nav-item">
             <%= link_to "Dashboard", '/dashboard', :class => "nav-link"%>
           </li>
