@@ -8,10 +8,10 @@ Back-end repo: https://github.com/dylanconnolly/drinkee-backend
   <a href="https://github.com/dylanconnolly/drinkee-backend">
   </a>
 
-  <h3 align="center">Drinkee Backend</h3>
+  <h3 align="center">Drinkee Frontend</h3>
 
   <p align="center">
-    A backend app built on Sinatra that consumes The Cocktail DB API and exposes data to its associated frontend app:
+    This application consumes from a cocktail API (https://www.thecocktaildb.com/api.php) using a sinatra backend application. From here we are passing the needed information back and forth between our front and back end in order to create cocktails. This is done by listing ingredients a user has where it is then cross-referenced against our cocktail database. If a user has all ingredients within a cocktail, then that cocktail is returned. 
     https://github.com/dylanconnolly/drinkee-frontend
     <br />
     <br />
